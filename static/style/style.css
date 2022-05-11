@@ -1,0 +1,207 @@
+/* Ich bin ein Kommentar */
+
+/* Aufbau einer Regel */
+/* p { color: red; } - Regel/Rule */
+/* p Selektor, also was wir stylen */
+/* {     } - Block */
+/* color: red; - Declaration, also Property: Value */
+/* color: Property */
+/* : red; Value */
+
+/* Arten von Selektoren: */
+/* * -Universalselekotr, alle Delcarations innerhalb der Regel werden auf alle Elemente der Seite angewandt */
+
+* {
+    color: rgb(255, 0, 0);
+}
+
+/* Fäbrt alle Texte der Seite Rot  */
+/* Ist der unspezifischste Selektor */
+/* Es gilt: Je spezifischer die Regel umso wichtiger ist sie */
+
+/* Elementselektor: */
+/* tagname {Regel:...} */
+h2 {
+    color: blue;
+}
+
+/* Ist spezifischer als der Universalselektor, also sind jetzt alle h2 Elemente blau */
+
+/* Klassenselektor: */
+/* .ClassName {Regel:....} */
+
+.chapter-heading {
+    color: green;
+}
+
+/* Spezifischer als der Elementsselektor, also sind alle Elemente der Klasse "Chapter-heading" jetzt grün */
+
+/* Id-Selektor */
+/* #idNamen {Regel:....} */
+
+#top {
+    color: black;
+}
+
+/*  Spezifischster Selektor */
+
+/* Man kann Sleektoren kombinieren */
+
+/* tagName.ClassName {Regel:...} */
+
+p.chapter-heading {
+    color: black;
+    font-size: larger;
+}
+
+h1#top {
+    font-size: 120px;
+}
+
+/* Ergänzt die Regel aus zeile 39, da sie sich nicht wiedersprechen */
+
+/* GruppenSelektor */
+/* Selektor1, selekotr2, ... {Regel: } */
+span,
+p {
+    background-color: silver;
+}
+
+/* Nachfahrenselektor */
+/* Allgemeine Nachfahrenselekotr */
+div ul {
+    background-color: brown;
+}
+
+/* Selektiert alle ul's die innerhalb einer div stehen
+    Egal wie verschachtelt sie sind
+*/
+
+/* Kindsselektor */
+/* Direkter Nachfahrenselektor */
+div>ul {
+    background-color: aquamarine;
+}
+
+/* Trifft nur ul's die direkt im Körper einer div definiert sind */
+
+/* Geschwisterselektor: */
+/* Allgemeiner Geschwisterselektor: */
+
+/* tag/klasse ~ tag2 {Regel:...} */
+
+h3~p {
+    background-color: darkgreen;
+}
+
+/* Trifft alle p-Tags, die auf der selben Ebene wie ein h3 Tag stehen */
+
+/* Direkter Geschwisterselektor: */
+/* tag + tag2 {Regel:...} */
+h3+p {
+    background-color: darkorange;
+}
+
+/* Trifft nur die p-Tags, die direkt neben einem h3 Element stehen */
+
+/* 
+    Properties:
+*/
+/* Farben:
+    color: - Bestimmt die Textfarbe
+    background-color: - Bestimmt die Hintergrundfarbe
+*/
+
+/* 
+    Texteigenschaften:
+    font-family: Verwedente Schriftart
+    Link zu google-fonts: https://fonts.google.com/
+    font-size: größe;
+    font-style: wie kursiv der Text ist;
+    font-weight: wie fett der Text ist;
+    text-align: left -linksbündig
+                right -rechtsbündig
+                center -zentriert
+                justify -blocksatz
+                start -passt sich an die sprache an, z.B. im deutschen links
+                end - passt sich an die sprache an, z.B. im deutschen rechts
+
+*/
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    /* Ist die Reihenfolger der Textauswahl
+        Falls Roboto nicht vorhanden ist wird der Browser eine seiner sans-serif Schriftarten nehmen
+    */
+}
+
+/* heigth: fixe höhe des Elements */
+/*  width: fixe breite des Elements*/
+
+/* Display und Position: */
+/* 
+    Display:
+            None - Element mit display none wird versteckt
+            block - Standardstyle z.B. bei p, div element nimmt sich die gesamte Seite an breite
+                    reagiert auf height und width
+            inline - span, Element nimmt sich nur so viel Platz wie absolut nötig
+                    ignoriert height und width
+            inline-block - Element nimmt sich nur so viel Platz wie nötig, reagiert aber auf height und width
+*/
+
+#example {
+    height: 250px;
+    width: 250px;
+    background-color: red;
+}
+/*  visibility: hidden; */
+/* Ähnlich wie display: none; aber die Seite berhält sich so als ob das Element noch da wäre */
+
+/* Positions: */
+/* position: static */
+/*  Standardposition für jedes Element, Element wird genau so platziert wie es im Dokument vorkommt
+    Ignoriert jegliche Parameter, die die Position verändern würden
+*/
+
+/* top, bottom, left, right */
+
+/* position: relative; */
+/* Das Elemente reagiert auf die Positionsparameter und verschiebt sich in relation zu seinem ursprünglichen Platz */
+/* p {
+    position: relative;
+    top: 80px; Verschiebt sich um 80px von oben weg
+    left: 25px; Verschiebt sich um 25px von links weg
+    right: 30px; Wird ignoriert, da bereits left gesetzt wurde(Bei zwei weidersprüchlichen Anweisungen gilt die erste)
+} */
+/* Andere Elemente verhalten sich weiterhin normal, können also überlagert werden */
+
+/* position: fixed */
+/* Das Elemente reagiert auf die Positionsparameter und verschiebt sich in realtion zum Sichtfeld */
+/* p {
+    position: fixed;
+    top: 80px; Ist jetzt immer 80px vom oberen rand weg und scrollt mit dem user mit
+} */
+
+/* position: absolute; */
+/* Verschiebt sich in realtion zum nächsten Vorfahren, der nicht static ist
+    Falls keiner der Vorfahren nicht static ist, verschiebt es sich in relation zum html-Tag
+ */
+
+/* 
+p {
+position: absolute;
+top: 0px;
+margin: 0;
+}
+*/
+/* Wird jetzt immer ganz oben links sein, da keiner seiner Vorfahren nicht static ist */
+
+/* position: sticky; */
+/* Muss mindestens einen Positionsparameter erhalten */
+/* Inzwischen am häufigsten bei navbars */
+/* Wechselt zwischen static und fixed */
+/* Solange es normal sichtbar ist, verählt es sich wie ein static Element */
+/* Sobald wir es durch scorllen aus den Augen verlieren wechselt es zu fixed */
+

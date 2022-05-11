@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!-- Die DOCTYPE Declaration sagt dem Browser um welche Art von Dokument es sich handelt -->
+<html lang="de">
+<!-- Damit die Searchengine weiß in welcher Sprache unsere Seite ist -->
+<!-- Die Seite selbst -->
+<!-- 
+
+    <{tagname}> Inhalt </{tagname}>
+    Öffnender   Inhalt  Schließender 
+    Tag                 Tag
+-->
+
+<head>
+    <!-- Ist für Metainformationen gedacht -->
+    <title>Hello World!</title> <!-- Wird im Tab angezeigt -->
+    <meta name="description" content="Meine erste HTML Seite">
+    <!-- das Attribut name symbolisiert wofür der meta Tag da ist, in unserem Fall eine Beschreibung -->
+    <!-- das Attribut content ist der Inhalt dieser Beschreibung -->
+    <meta charset="utf-8">
+    <!-- Sagt dem Brwoser welches charset benutzt wird, damit alles richtig dargestellt werden kann -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Legt die anfängliche Seitegröße auf die Größe des Browserfensters fest und den anfänglichen Zoom auf 100% -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Alter meta Tag um die Unterstützung von alten IE Versionen zu gewährleisten -->
+    <!-- <style>
+        h1 {
+            font-size: 60px;
+        }
+        p {
+            color: violet;
+        }
+    </style> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- ! <link>-Tag -->
+    <link rel="stylesheet" href="/static/style/style.css">
+    <!-- rel gibt an um was für eine Beziehung es sich handelt -->
+    <!-- href gibt an wo die Datei liegt -->
+</head>
+<!-- Wie kriege ich CSS in meine HTML Datei?
+    Drei Möglichkeiten (von worst-practice zu best-practice sortiert):
+    3. inline-styling: Styling mittels attribut:
+    <h1 style="color: red;">
+        Ist schlecht weil:
+            Styling kann nicht wiederverwendet werden
+            WIrd nur auf das Element angewendet in dem es steht
+            Gibt eine kleine und seltene Ausnahme:
+            Im Falle von sehr langsamen Internet werden die style Attribute vor dem CSS-Sheet geladen
+            und somit früher dargestellt
+    2. <style>-Tag
+        Wird meistens im head gesetzt
+        Können dort ganz normalen CSS Syntax verwenden
+        Können mehrere Elemente gleichzeitig stylen
+        Ist schlecht weil:
+            HTML Dokument wird größer und somit langsamer zum laden
+            Problematik beim wiederverwenden weil wir den style Tag immer in andere Seiten einfügen müssen
+    1. Innerhalb einer eigenen CSS Datei
+        Verhalten wie beim style-Tag, aber die Seite wird dadurch nicht größer
+        Der Client kann sich die CSS Datei im Cache speichern
+        Wir können es leicht wiederverwenden, da wir nur den  link-tag beötigen
+-->
+
+<body>
+    <!-- Der Browser rendert so gut wie alles was wir schreiben, egal ob es ein echter oder ein
+                erfundener Tag ist
+        -->
+    <!-- Header-Tags -->
+    <!-- h-Tags -->
+    <!-- h1-h6 -->
+    <!-- h1 ist die Wichtigste und h6 die unwichtigste Überschrift -->
+    <!-- h1 Tag nur 1x pro Seite -->
+    <!-- Alle anderen beliebig oft -->
+    <!-- Standarddarstellung ist fettgedruckt und je nach nummer verschiedene Größe
+            h1 riesig -> h6 klein
+        -->
+    <div>
+        <h1 id="top">Willkommen auf unsere ersten HTML-Seite</h1>
+        <!-- Text-Tags: -->
+        <!-- p-Tag -> paragraph -->
+        <!-- span-Tag -> Texteinschub -->
+        <!-- Alt + Z für Zeilenumbrüche ohne auswirkung auf Code -->
+        <h2>Span-Tag</h2>
+        <!-- Der span-Tag hat keine Abstände und erzwingt keine neue Zeile -->
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, rem nesciunt! Ut unde incidunt rerum id
+            facere perspiciatis, eum mollitia debitis quidem minus hic ea aliquid quae saepe, necessitatibus
+            laborum.</span>
+        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima molestiae amet quibusdam numquam
+            voluptatibus quod, cumque aliquid accusantium nostrum exercitationem. Nobis iste aperiam nihil ea neque
+            mollitia quidem sunt rem!</span>
+        <h2>P-Tag</h2>
+        <!--  Der P-Tag erzwingt eine neue Zeile und hat nach oben und unten standardmäßig abstand -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sequi impedit iure animi. Fuga, numquam?
+            Molestiae quam obcaecati sequi error aperiam et a iure corrupti voluptatem, quod voluptas vitae accusamus.
+        </p>
+    </div>
+    <!-- Tags zur Textdarstellung: -->
+    <!-- strong-Tag -> Stellt Textstelle fett dar -->
+    <!-- em-Tag -> stellt umschlossenen Text kursiv dar -->
+    <!--  strong und em werden von screenreadern besonders ausgesprochen -->
+    <!-- b-Tag -> wie strong -->
+    <!-- i-Tag -> wie em -->
+    <div>
+        <h2>Strong & em</h2>
+        <p><strong>Lorem ipsum</strong>, <em>dolor sit amet consectetur adipisicing elit</em>. Dolore dignissimos eaque
+            accusamus possimus hic quibusdam facilis veritatis porro deserunt molestiae optio harum sunt aspernatur
+            deleniti ipsa earum veniam, quae sint.</p>
+        <!-- ANdere Textdeko-Tags -->
+        <h2>Weitere Text-Tags</h2>
+        <h3>Sub & Sup</h3>
+        <p>2<sub>32</sub></p>
+        <!-- Subskript für Fußnoten oder Indizes -->
+        <p>200 m<sup>2</sup></p>
+        <!-- Zum hochstellen des umschlossenen Textes -->
+        <h3>Small & mark</h3>
+        <p><small>Kleingedruckter Text</small></p>
+        <!-- Z.B. für rechtliche Hinweise -->
+        <p><mark>Ich bin markiert</mark></p>
+        <!-- Markiert den Text farblich -->
+        <h3>ins & del</h3>
+        <p><del cite="https://ppedv.de" datetime="2022-05-11">Veraltete Info</del></p>
+        <!-- Falls was entfernt wurde, aber nachvollziehbar sein soll/muss -->
+        <p><ins cite="https://ppedv.de" datetime="2022-05-11">Ich bin die Korrektur</ins></p>
+        <!-- Ergänzung zu vorher falschen Infos oder neue Erkenntnisse -->
+        <h3>blockquote & q</h3>
+        <p>
+        <blockquote>Ich bin ein langes Zitat, Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ut culpa
+            quasi eaque, fugit ex reiciendis blanditiis quia necessitatibus, atque error dolorum odit eveniet amet
+            exercitationem recusandae maiores numquam. Similique?</blockquote>
+        </p>
+        <!-- Blockqoute ist für längere Zitate gedacht -->
+        <p>
+            <q>Ich bin ein kurzes Zitat</q>
+        </p>
+        <!-- q ist für kurze Zitate gedacht -->
+        <!-- Können ein cite-Attribut haben, das auf die Quelle verlinkt -->
+        <h3>abbr & cite</h3>
+        <p>
+            <abbr title="Hyper Text Markup Language">
+                HTML
+            </abbr>
+            <!--  Für Abkürzungen, das title-Attribut ist für das ausgeschriebene Wort -->
+        </p>
+        <p>
+            <cite>Buchtitel</cite>
+            <!-- Für Buch/Filmtitel oder Autoren usw. -->
+        </p>
+        <h3>address</h3>
+        <p>
+        <address>
+            12345 Musterhausen
+        </address>
+        </p>
+        <!--  Für Adressen und Kontaktdaten -->
+    </div>
+    <div>
+        <h2>Listen in HTML</h2>
+        <h3>ul & ol</h3>
+        <h4>ul - Unorderd List</h4>
+        <ul>
+            <!-- Der ul Tag symbolisiert den Anfang einer Liste oder einer Unterliste -->
+            <li>Ich bin ein Listitem</li>
+            <!-- li-Tags sind die tatsächlich aufgelisteten Punkte -->
+            <ul>
+                <!-- Hier wird eine untergeordnete Liste begonnen -->
+                <li>Ich bin ein Unterpunkt</li>
+                <ul>
+                    <li>Ein weiterer Unterpunkt</li>
+                </ul>
+            </ul>
+        </ul>
+        <h4>ol - Ordered List</h4>
+        <ol reversed start="50" type="I">
+            <!-- Attribute der ol -->
+            <!-- start="Zahl" Der Startpunkt des Zählens -->
+            <!-- reversed Zählung wird umgedreht -->
+            <!-- type="{zeichen}" -->
+            <!-- 
+                    1 - Normale Nummerierung
+                    A - Großbuchstaben
+                    a - Kleinbuchstaben
+                    I - Große römische Ziffern
+                    i - kleine römische Ziffern
+            -->
+            <li>Punkt</li>
+            <li>Punkt</li>
+            <li>Punkt</li>
+            <li>Punkt</li>
+            <ol>
+                <li>Unterpunkt</li>
+                <ol>
+                    <li>Unterpunkt</li>
+                </ol>
+            </ol>
+        </ol>
+        <h4>dl - Description/Definition List</h4>
+        <dl>
+            <!-- Mit dl symbolisieren wir wieder den Anfang -->
+            <!-- ! Achtung keine li's sonder dt und dd -->
+            <dt>ppedv</dt>
+            <!-- Descritpion/Definition term
+                also was wir beschreiben/erklären wollen
+            -->
+            <dd>Ein IT-Schulungsanbieter</dd>
+            <!-- Description/definition detail
+                Also die zugehörige Erklärung
+            -->
+        </dl>
+    </div>
+    <div>
+        <h2>Tabellen in HTML</h2>
+        <p>Haben immer den selben Aufbau:</p>
+        <!-- Beginnen immer mit dem Table-Tag -->
+        <table>
+            <!-- Symbolisiert den beginn einer Tabelle und stellt alleine noch nichts dar -->
+            <!-- Ist in zwei bis drei Bereiche aufgegliedert -->
+
+            <thead>
+                <!-- ! Der Tablehead ist notwendig -->
+                <!-- DIe Kopfzeile der Tabelle mit den Spaltennamen -->
+                <!-- Besteht aus tr und th-Tags -->
+                <tr>
+                    <!-- Steht für Tablerow, also eine Zeile der Tabelle -->
+                    <th scope="col">
+                        <!-- Tableheading, also die Überschrift der Spalte/Zeile -->
+                        <!-- th verfügt über ein mögliches Attribut: scope -->
+                        <!-- Mögliche Werte:
+                            scope="row" - Überschrift bezieht sich auf die ganze Zeile
+                            scope="col" - Überschrift bezieht sich auf die ganze Spalte
+                        -->
+                        Produkt
+                    </th>
+                    <th scope="col">
+                        Menge
+                    </th>
+                    <th scope="col">
+                        Stückpreis
+                    </th>
+                    <th scope="col">
+                        Gesamtpreis
+                    </th>
+                </tr>
+                <!-- Können auch mehrere tr Elemente im thead haben, je nach Tabellenaufbau -->
+            </thead>
+            <tbody>
+                <!-- Der Körper der Tabelle mit den wichtigen Daten -->
+                <!-- ! Pflicht -->
+                <tr>
+                    <!-- Inhalt der tr ist im Falle des Bodys th oder td -->
+                    <th scope="row">Laptop</th>
+                    <td>
+                        <!-- td steht für tabledata also die tatsächlichen Informationen -->
+                        4
+                    </td>
+                    <td>
+                        500,00€
+                    </td>
+                    <td>
+                        2000,00€
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Inhalt der tr ist im Falle des Bodys th oder td -->
+                    <th scope="row">Monitor</th>
+                    <td>
+                        <!-- td steht für tabledata also die tatsächlichen Informationen -->
+                        4
+                    </td>
+                    <td>
+                        200,00€
+                    </td>
+                    <td>
+                        800,00€
+                    </td>
+                </tr>
+                <tr>
+                    <!-- Inhalt der tr ist im Falle des Bodys th oder td -->
+                    <th scope="row">Schreibtisch</th>
+                    <td>
+                        <!-- td steht für tabledata also die tatsächlichen Informationen -->
+                        4
+                    </td>
+                    <td>
+                        150,00€
+                    </td>
+                    <td>
+                        600,00€
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- Optionale Fußzeile der Tabelle -->
+                <tr>
+                    <th colspan="3" scope="row">Gesamtpreis aller Produkte:</th>
+                    <!-- Das colspan Attribut sagt dem th/td Element wie viele Spalten es füllen soll -->
+                    <td>3400,00€</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div>
+        <h2>Bilder und Videos</h2>
+        <h3>Bilder:</h3>
+        <h4>Der img-Tag:</h4>
+        <!-- Der img-Tag ist selbstschließend -->
+        <!-- Strg + K, Strg + C -> Kommentar -->
+        <!-- Strg + K, Strg + U -> Kommentar entfernen -->
+        <!-- Muss über mindestens zwei Attribute verfügen  -->
+        <!-- src="Pfad zum Bild" -->
+        <!-- alt="Beschreibung" Was dargestellt wird, falls das Bild nicht geladen werden kann oder für Screenreader -->
+        <!-- Weitere mögliche Attribute:
+            heigth="höhe in pixel"
+            width="breite in pixel"
+            Sollte vermieden werden und lieber mit css geregelt sein
+        -->
+        <img src="https://via.placeholder.com/350x150" alt="Ein Platzhalterbild">
+        <!-- https://via.placeholder.com/breitexhöhe
+            https://via.placeholder.com/350x150
+        -->
+        <h4>Pciture-Tag</h4>
+        <!-- Besteht aus insgesamt drei verschiedenen Tags -->
+        <picture>
+            <!-- Symbolisiert, dass ein Bild folgt -->
+            <source media="(min-width:650px)" srcset="https://via.placeholder.com/500x250">
+            <!-- Soruce-Tag hat zwei Attribute: -->
+            <!-- srcset="Link zum Bild" -->
+            <!-- media="(css-regel)" -->
+            <source media="(min-width:450px)" srcset="https://via.placeholder.com/350x150">
+            <img src="https://via.placeholder.com/250x100" alt="Ein Platzhalterbild">
+        </picture>
+        <!-- Je nach Browserfenstergröße wird das passende Bild gewählt
+            Spart mobile Daten und css-anpassungen
+        => Benutzerfreundlicher
+        -->
+        <h3>Videos in HTML:</h3>
+        <h4>video-Tag</h4>
+        <video autoplay controls muted loop width="250px" height="200px" poster="https://via.placeholder.com/250x200">
+            <!-- Attribute des Video-Tags -->
+            <!-- controls - Bedienungsoverlay -->
+            <!-- autoplay - Spielt das video automatisch ab -->
+            <!-- muted - Video ist standardmäßig lautlos -->
+            <!-- loop - Video wird in dauerschleife gespielt -->
+            <!-- height & width -->
+            <!-- poster - Thumbnail des Videos -->
+            <!-- Funktioniert ähnlich wie der picture Tag -->
+            <!-- source-Tag Attribute: src="link zum Video" type="video/(mp4/mov/webm)" -->
+            <source src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+    <div>
+        <h2>Attribute, Klassen und Ids</h2>
+        <h3>Attribute:</h3>
+        <p>Attribute werden immer im Starttag definiert</p>
+        <p>
+            Sind Schlüssel="Wert" Paare, die direkt in den Tag reingeschrieben werden.
+        </p>
+        <p>
+            Die meisten Attribute sind schon vorgegeben und können pro Element bei MDN nachgeschaut werden.
+        </p>
+        <p>Ändern häufig das Verhalten oder die Darstellung</p>
+        <p>Unterscheiden zwischen booleschen Attributen und allen anderen</p>
+        <p>Boolesche Attribute gelten als true, sobald sie im Starttag stehen</p>
+        <h3 class="chapter-heading">Klassen:</h3>
+        <p class="chapter-heading">Sind Sonderformen von Attributen</p>
+        <p>Werden wie folgt gesetzt &lt; p class="Klassenname1 Klassenname2 usw..." &gt;</p>
+        <p>Diese Klassen dienen zum styling mittels CSS und zum ansprechen der Elemente mittels JavaScript</p>
+        <p>Klassennamen sind case-sensitive</p>
+        <p>Mehere Elemete können der selben Klasse angehören</p>
+        <p>Die Klassennamen sollen der Funktion des Elementes entsprechen und nicht das Aussehen beschreiben</p>
+        <h3 id="headingId">Id:</h3>
+        <p>Sonderform der Attributes</p>
+        <p>Werden wie folgt gesetzt &lt; p id="idName" &gt;</p>
+        <p>Diese Klassen dienen zum styling mittels CSS und zum ansprechen der Elemente mittels JavaScript</p>
+        <p>Sind case-sensitive</p>
+        <p>Sollten einzigartig sein</p>
+        <p>Die Id sollte auch die Funktion des Elementes beschreiben</p>
+    </div>
+    <div>
+        <h2>Der a-Tag</h2>
+        <h3>anchor-Tag</h3>
+        <p>Wird benutzt um auf andere Seiten oder innerhalb unserer Seite Inhalte zu verlinken</p>
+        <a href="https://ppedv.de" target="_blank">ppedv-Homepage</a>
+        <a href="#top">Go to top</a>
+        <a href="zweiteSeite.html">Zweite Seite</a>
+        <!-- Wichtiges attribut:
+            target="_blank" Öffnet in einem neuen Tab
+        -->
+    </div>
+    <h6>Ich bin die unwichtigste Überschrift</h6>
+    <div id="example">
+
+    </div>
+    <!-- Div-Tag -->
+    <!-- Dient der Gliederung unseres Dokuments in Sinnesabschnitte -->
+</body>
+
+</html>
