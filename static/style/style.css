@@ -204,4 +204,28 @@ margin: 0;
 /* Wechselt zwischen static und fixed */
 /* Solange es normal sichtbar ist, verählt es sich wie ein static Element */
 /* Sobald wir es durch scorllen aus den Augen verlieren wechselt es zu fixed */
+/* 
+h1#top {
+    position: sticky;
+    font-size: 48px;
+    top: 0;
+} */
 
+/* float: */
+/* Ursprünglicher Gedanke: Bilder direkt in Text einbetten ohne Abstände */
+/* Werte: left/right */
+/* Wird aus dem Fluss der Seite genommen, aber wird noch von den anderen Elementen beachtet */
+img#floatPic {
+    float:left;
+}
+
+/* Tabellen in CSS: */
+/* Benutzen dafür die Property border */
+th, td {
+    border: black 1px solid;
+    /* Reihenfolge: farbe dicke Stil */
+}
+table {
+    border-collapse: collapse;
+    /* Fügt die Borders zwischen den Zellen zu einer gemeinsamen zusammen */
+}
