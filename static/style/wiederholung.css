@@ -1,0 +1,52 @@
+/* Wiederholung Tag 1: */
+/* Selektoren: */
+
+/* Elementselektor */
+li {
+    color: black;
+}
+
+/* Klassenselektor  */
+.list {
+    background-color: antiquewhite;
+}
+
+/* Idselektor */
+#wiederholung {
+    text-decoration: solid underline;
+}
+
+/* Geschwisterselektoren */
+/* Allgemeinen */
+li ~ li {
+    color: gray;
+}
+
+/* Direkten */
+
+li + ul {
+    background-color: green;
+}
+
+/* Nachfahrenselektor */
+/* Allgemeine */
+
+ul li {
+    background-color: orange;
+}
+
+/* Direkte */
+
+ul > ul {
+    background-color: blueviolet;
+}
+
+/* Universalselektor */
+
+* {
+    color:black;
+}
+
+h1, h2 {
+    background-color: bisque;
+}

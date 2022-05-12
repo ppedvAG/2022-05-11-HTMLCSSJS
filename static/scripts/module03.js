@@ -80,3 +80,7 @@ numberOne *= 429
 
 // Sparen uns damit das explizite ausschreiben
 
+// Funktionen definieren und anwenden
+// Kontrollstrukturen
+// Vordefinierten Objekte 
+// Objekte erstellen 
