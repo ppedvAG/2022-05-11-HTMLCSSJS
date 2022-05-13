@@ -282,3 +282,5 @@ for (prop in mustermann) {
 }
 
 // Bei Objekten die alternative zu einer normalen for-Schleife, da Objekte über keinen Index verfügen und wir somit die Eigenschaften nicht mit Zahlen ansprechen können
+
+// Nach der Pause gehts weiter mit: !DOM und Events

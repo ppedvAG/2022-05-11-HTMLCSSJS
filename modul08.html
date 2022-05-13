@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!-- Root -->
+<!-- Ursprüngliche "Wurzel" des Dokuments, ab dem es sich weiter nach unten verzweigt -->
+<html lang="de">
+<!-- Node -->
+<!-- Ein einzelner Knotenpunkt -->
+
+<head>
+    <!-- Parent-Node von allen Nodes, die in ihr verschachtelt sind-->
+    <!-- Alle meta-Tags, der Title-Tag und der Script-Tag sind Children der head-Node -->
+    <!--  Child-Nodes sind Elemente, die direkt im Körper eines anderen Elements geschireben wurden -->
+    <meta charset="UTF-8"> <!-- Ist eine Child-Node von head-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Child Node von head, und gleichzeitig ein descendant (nachfahre) der html-Node -->
+    <!-- Descendants sind child-Nodes und deren Child-Nodes usw. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <script src="/static/scripts/module08.js" defer></script>
+</head>
+
+<body> <!-- Sibling-Node (Geschwister) von head -->
+    <div> <!-- Ancestor(Vorfahre)-Node von li und ul-->
+        <!-- Parent-Nodes sind Ancestors und deren Parent-Node ist ein Ancestor usw -->
+        <ul>
+            <li>Descendant von body, div und ul und außerdem child von ul</li>
+        </ul>
+        <table>
+            <thead>
+                <tr id="table-headings">
+                    <th scope="col">NodeName</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row">
+                    <!-- Jegliches Html-Element, also body, p, div, ul, usw. -->
+                    <td>ELEMENT_NODE</td>
+                    <td>1</td>
+                </tr>
+                <tr class="row">
+                    <!-- Jeglicher Textinhalt der Seite, also alles was zwischen den Tags eines Elements steht, als auch Zeilenumbrüche -->
+                    <td>TEXT_NODE</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <!-- Jedes Kommentar auf unsere Seite, also auch dieses hier -->
+                    <td>COMMENT_NODE</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <!-- Also unser gesamtes Dokument -->
+                    <td>DOCUMENT_NODE</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <!-- Die Doctype Declaration am Anfang des Dokuments -->
+                    <td>DOCUMENT_TYPE_NODE</td>
+                    <td>10</td>
+                </tr>
+            </tbody>            
+        </table>
+    </div>
+    <div id="übung">
+    </div>
+</body>
+
+</html>
