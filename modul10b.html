@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 10b - Inputarten & Formelemente</title>
+</head>
+<body>
+    <form action="/modul10.html">
+        <!-- Input-Element -->
+        <!-- Standardtyp vom Input Element ist immer Text -->
+        <label for="standardInp">Ohne Type:</label>
+        <input id="standardInp">
+        <label for="textInp">Mit type="text":</label>
+        <input type="text" id="textInp">
+        <label for="emailInp">Mit type="email"</label>
+        <input type="email" id="emailInp" required>
+        <!-- Validiert ob der Inhalt eine Email ist -->
+        <!-- required spezifiziert, dass das Formular nicht abgeschickt werden darf, solange der input nicht gültig ist -->
+        <label for="colorInp">Mit type="color"</label>
+        <input type="color" id="colorInp">
+        <!-- Stellt uns einen Colorpicker zur Verfügung -->
+        <!-- value entspricht der Zahl im Heaxedzimal Format -->
+        <label for="dateInp">Mit type="date"</label>
+        <input type="date" id="dateInp">
+        <!-- Stellt einen Kalender zur Verfügung -->
+        <!-- value entspricht dem Datum als String Format: "YYYY-MM-dd" -->
+        <label for="fileInp">Mit type="file"</label>
+        <input type="file" id="fileInp">
+        <!-- Stellt uns ein Dateiupload Menü zur Verfügung -->
+        <label for="passwordInp">Mit type="password"</label>
+        <input type="password" id="passwordInp">
+        <!-- Textbox mit ausgeblendeten Zeichen -->
+        <!-- value entspricht dem Passwort in klartext -->
+        <label for="radioInp">Mit type="radio" HTML</label>
+        <input type="radio" value="HTML" name="radioInp" id="radioInp">
+        <label for="radioInp2">Mit type="radio" CSS</label>
+        <input type="radio" value="CSS" name="radioInp" id="radioInp2">
+        <!-- Damit radio-Buttons funktionieren müssen sie mit dem name-Attribut gruppiert werden
+        Aus einer Reihe von radio-Buttons mit dem selben Namen kann nur einer ausgewählt sein
+        -->
+        <label for="checkInp1">Type="checkBox" 1:</label>
+        <input type="checkbox" id="checkInp1" value="1">
+        <label for="checkInp2">Type="checkBox" 2:</label>
+        <input type="checkbox" id="checkInp2" value="2">
+        <!-- Checkbox -->
+        <!-- Für 0 oder mehr Antwortmöglichkeiten -->
+        <label for="rangeInp">Type="range"</label>
+        <input type="range" id="rangeInp" min="0" max="100" step="50">
+        <!-- Schieberegler ohne angezeigten Wert -->
+        <!-- min steht für den Minimalwert -->
+        <!-- max steht für den Maximalwert -->
+        <!-- step steht für die Schrittweite -->
+        <!-- value ist die derzeitige Zahl als String -->
+        <label for="searchInp">type="search"</label>
+        <input type="search" id="searchInp">
+        <!-- Verhält sich wie ein Textfeld, aber bietet eine Funktionalität zum löschen des aktuellen Wertes -->
+        <label for="numberInp">type="number"</label>
+        <input type="number" id="numberInp" max="150" min="0" step="10">
+        <!-- Ist eine Box mit Pfeilen um die schrittweite hoch oder runterzuzählen bis zum jeweiligen min/max Wert -->
+        <!-- min steht für den Minimalwert -->
+        <!-- max steht für den Maximalwert -->
+        <!-- step steht für die Schrittweite -->
+        <!-- value ist die derzeitige Zahl als String -->
+        <label for="resetInp">type="reset"</label>
+        <input type="reset" id="resetInp" value="Reset-Button">
+        <!-- value enthält den Text des Buttons -->
+        <!-- Leert beim betätigen das gesamte Formular -->
+        <input type="submit" value="Bring mich zu 10a">
+    </form>
+    <form>
+        <!-- Weitere Elemente die in einer Form möglich sind -->
+        <label for="selEl">Select-Element:</label>
+        <select id="selEl">
+            <!-- Ist ein einfaches dropdown Menü -->
+            <!-- Gültige Children sind optgroup und options -->
+            <!-- optgroup ist eine "überschrift" -->
+            <!-- option ist ein einzelner Eintrag -->
+            <optgroup label="Marvel">
+                <option value="Ironman">Ironman</option>
+                <option value="Spiderman">Spiderman</option>
+                <option value="Hulk">Hulk</option>
+            </optgroup>
+            <optgroup label="DC">
+                <option value="Superman">Superman</option>
+                <option value="Batman">Batman</option>
+                <option value="Wonderwoman">Wonderwoman</option>
+            </optgroup>
+        </select>
+        <!-- Per value kriegt man den derzeitig ausgewählten Wert zurück -->
+        <label for="textArea">Textarea:</label>
+        <textarea id="textArea" cols="30" rows="10"></textarea>
+        <!-- Über cols und rows kann man bestimmen wie breit und hoch die Textare anfangs ist -->
+        <!-- Button -->
+        <button value="1">Ich bin ein Button</button>
+        <!-- fieldset -->
+        <!-- Gruppiert meherere Input-Elemente -->
+        <fieldset>
+            <legend>Persönliche Infos:</legend>
+            <label for="prename">Vorname:</label>
+            <input list="names" type="text" id="prename" placeholder="Max">
+            <label for="lastname">Nachname</label>
+            <input type="text" id="lastname" placeholder="Mustermann">
+        </fieldset>
+        <!-- datalist -->
+        <!-- Vorschläge für die Befüllung von Inputs -->
+        <!-- Werden mittels list-Attribut beim Input eingebunden -->
+        <!-- der Wert vom list-Attribut entspricht der id der datalist -->
+        <datalist id="names">
+            <option value="Magnus"></option>
+            <option value="Christian"></option>
+            <option value="Marius"></option>
+        </datalist>
+    </form>
+</body>
+</html>

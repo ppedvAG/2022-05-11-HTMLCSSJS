@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul10a - Eventtypen & basic Input</title>
+    <script src="static/scripts/module10.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <button id="createItem">Listeneintrag hinzufügen</button>
+        <button id="deleteItems">Liste leeren</button>
+        <ul id="listBody">
+        </ul>
+    </div>
+    <!-- Forms -->
+    <!-- Sind Formulare, die ausgefüllt werden können -->
+    <!-- Sie geben uns die Möglichkeit mit Input vom User zu arbeiten -->
+    <!-- Gibt vielzahl an verschiedenen Tags, die auf spezielle Arten von Input angepasst sind -->
+    <!-- Ähnlich wie Tabellen haben Forms einen speziellen aufbau -->
+    <form>
+        <!-- Label ist die Beschriftung für einen Input -->
+        <label for="taskName">Taskname:</label>
+        <!-- Das for-Attribut erhält als Wert, die ID des Inputs, den label beschreibt -->
+        <input type="text" id="taskName" placeholder="Tasknamen eingeben...">
+        <!-- type gibt an um welche Art von Input es sich handelt -->
+        <!-- Der placeholder gibt den Text an, der angezeigt wird bevor man etwas reingeschrieben hat -->
+    </form>
+    <!-- action-Attribute spezifiziert auf welche Seite weitergeleitet werden soll, sobald das Formular abgesendet wird -->
+    <form action="/modul10b.html">
+        <input type="submit" value="Bring mich zu 10b">
+        <!-- type="submit" wandelt Input in einen Submit-Button um, der das Formular absendet, sobald er geklickt wurde -->
+        <!-- Also selbes verhalten wie wenn man enter drückt -->
+        <!-- value="Text" stellt "Text" im Button dar -->
+    </form>
+    <div>
+        <ul id="taskList">
+        </ul>
+    </div>
+</body>
+</html>
