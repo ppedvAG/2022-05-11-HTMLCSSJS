@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 11 - Cookies, webStorage</title>
+    <script src="/static/scripts/module11.js" defer></script>
+</head>
+<body>
+    <h2>Cookies</h2>
+    <p>Sinn von Cookies:</p>
+    <ul>
+        <li>Sind Daten, die in kleinen Textdateien auf dem PC des Users gespeichert werden</li>
+        <li>Sind dafür gedacht, damit sich Seiten Infos über den User speichern können</li>
+        <li>Werden in Schlüssel="Wert" Paaren gespeichert</li>
+        <li>Maximale Anzahl an Cookies: Chrome 180, Firefox 150, Android 50</li>
+        <li>Maximale Größe: 4096 bytes</li>
+        <li>Haben oft ein Verfallsdatum(theoretisch keine Grenze nach oben)</li>
+        <li>Ohne Verfallsdatum werden sie bis zum Schließen des Browsers beibehalten (Sitzungsgültigkeit/ Sessionduration)</li>
+    </ul>
+    <h2>Brave-Browser:</h2>
+    <a href="https://brave.com/de/">Brave-Browser</a>
+    <h3>Auslesen von Cookies</h3>
+    <p>Direkt im Browser:</p>
+    <ol>
+        <li>Browser öffnen</li>
+        <li>Dev-Tools öffnen</li>
+        <li>Auf Reiter Anwendung wechseln</li>
+        <li>Auf Cookies klicken</li>
+    </ol>
+    <p>Über JavaScript:</p>
+    <code>document.cookie</code>
+    <p>Gibt einen String zurück der alle Cookies mit ; getrennt auflistet</p>
+    <ol>
+        <li>document.cookie in einer Variable speicher</li>
+        <li>variable.split(";"); aufrufen und zuweisen</li>
+        <li>Per Index die einzelnen cookies ansprechen</li>
+    </ol>
+    <div>
+        <button id="createCookie">Cookie setzen</button>
+        <button id="displayCookie">Cookie darstellen</button>
+        <button id="deleteCookies">Cookies löschen</button>
+    </div>
+    <output id="cookies"></output>
+    <h2>Anwendungsfälle:</h2>
+    <ul>
+        <li>Consent abspeichern, wenn der User das setzen von cookies erlaubt</li>
+        <li>Um einen Token im Speicher zu halten, der für Autorisierung nötig ist</li>
+        <li>Um angemeldet zu bleiben, selbst wenn ich die Seite verlasse</li>
+    </ul>
+    <h2>Session- & localStorage</h2>
+    <p>Moderne Alternative zu den Cookies</p>
+    <p>Beschränkungen:</p>
+    <ul>
+        <li>Keine Maximale Anzahl an Schlüssel-Wert Paaren</li>
+        <li>Maximale Größe: 5 MB</li>
+    </ul>
+    <p>Vorteile:</p>
+    <ul>
+        <li>Haben getrennten Store für kurzzeitige und langzeitige Daten</li>
+        <li>SessionStorage hält die Daten immer nur bis der Browser geschlossen wird => kurzzeitge Infos</li>
+        <li>localStorage hat kein ExpirationDate, wird solange gespeichert bis wir im Code etwas löschen oder der User seinen Cache leert</li>
+        <li>Viel komfortabler in der Verwendung</li>
+    </ul>
+    <p>Eigenschaften und Methoden der Storages:</p>
+    <ul>
+        <li>lolcaStorage/sessionStorage.length => Gibt die Anzahl an gespeicherten Datensätzen der derzeitigen Seite wieder</li>
+        <li>
+            localStorage/sessionStorage.getItem("Schlüssel") => Gibt den Wert des jeweiligen Schlüssels zurück
+        </li>
+        <li>localStorage/sessionStorage.setItem("Schlüssel", "Wert") => legt einen neuen Datensatz mit dem entsprechenden Schlüssel/Wert Paar an oder überschreibt ihn, falls er existiert</li>
+        <li>Alternative zu getItem: localStorage/sessionStorage["Schlüssel"]</li>
+        <li>sessionStorage/localStorage.removeItem("Schlüssel") => löscht das angegebene Schlüssel-Wert Paar</li>
+        <li>sessionStorage/localStorage.clear() => Löscht alle Schlüssel/Wert-Paare</li>
+        <li>sessionStorage/localStorage.key(index) => gibt mir den Schlüssel an der angegebenen Indexposition zurück</li>
+    </ul>
+    <div>
+        <button id="addStorage">localStorage befüllen</button>
+        <button id="displayStorage">localStorage anzeigen</button>
+        <button id="deleteStorage">localStorage leeren</button>
+    </div>
+    <output id="outputStorage"></output>
+    <!-- Eigentlich für mathematische Operation gedacht, aber wird hier benutzt, weil er Zeilenumbrüche anzeigt -->
+</body>
+</html>
