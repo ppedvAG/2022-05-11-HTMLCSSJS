@@ -7,6 +7,7 @@
     /* Definieren von variablen */
     --myVar1: red;
     --myVar2: 25px;
+    --VariablenName: 50px; 
 }
 
 
@@ -15,6 +16,20 @@
 /* Reihenfolge ist wichtig, da die regel gilt, die als letztes definiert wurde und anwendbar ist */
 /* Im Falle von min-width wollen wir immer von der kleinsten zur größten Größe definieren */
 /* Im Falle von max-width wollen wir von der kleinsten zur größten Größe definieren */
+/* Syntax: @media {mediaType} and (Bedingung) */
+/* Gültige MediaTypes:
+    screen - Alles mit Display, also Handy, Laptop, Pc, Fernseher
+    print - Drucker
+    speech - screenreader
+    all - Gilt für alle mediaTypes
+*/
+@media screen {
+    :root {
+        --myVar1: blue;
+    }
+}
+
+
 @media screen and (min-width: 250px) {
     :root {
         --myVar1: yellow;
@@ -23,9 +38,26 @@
 
 @media screen and (min-width: 500px) {
     :root {
-        --myVar1: magenta;
+        --myVar1: rgb(16, 13, 16);
     }
 }
+
+@media screen and (min-width: 750px) {
+    :root {
+        --myVar1: rgb(24, 208, 64);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --myVar1: rgb(106, 11, 106);
+    }
+}
+
+/* Bei MediaQueries gehen wir so vor, dass wir Breakpoints setzen
+    Also Punkte bei denen sich das styling, v.a. die Größe wegen des verfügbaren Raumes ändern muss
+    Wir sollten einen Fall haben, der keine Bedingung hat, damit immer ein Styling gewährleistet wird    
+*/
 
 @media print {
     :root {
@@ -37,3 +69,6 @@ article {
     /* Benutzen von variablen */
     background-color: var(--myVar1);
 }
+
+/* Alternative für mediaqueries */
+/* flexbox */

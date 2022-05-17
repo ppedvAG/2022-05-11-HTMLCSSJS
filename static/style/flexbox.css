@@ -1,0 +1,200 @@
+h1 {
+    text-align: center;
+}
+
+header {
+    background-color: aquamarine;
+}
+
+article {
+    background-color: darkcyan;
+}
+
+/* Durch display: flex */
+/* Wird unsere section ein flexbox Container und all seine Kindselemente werden flex-items
+    Mittels mediaqueries können wir nun die flexdirection anpassen und müssen uns nicht mehr direkt um die Größe der jeweiligen Elemente kümmern
+    Die flexbox und ihre items nehmen sich so viel platz wie nötig
+*/
+section {
+    display: flex;
+}
+/* Bei kleineren Bildschirmen werden die article nun als Spalte angeordnet und untereinander dargestellt */
+/* @media screen {
+    section {
+        /* flex-direction: Gibt an wie die flex-items angeordnet werden
+            Mögliche Werte:
+            column - werden als Spalte, also untereinander angeordnet
+            row - werden als Zeile, also nebeneinander angeordnet
+            column reverse - werden untereinander in umgekehrter Reihenfolge angezeigt
+            row reverse - werden nebeneinander in umgekehrter Reihenfolge angezeigt
+        */
+        /* flex-direction: column;
+    }
+} */
+/* Bei größeren Bildschrimen werden sie in einer Zeile dargestellt */
+/* @media screen and (min-width: 650px) {
+    section {
+        flex-direction: row;
+    }
+} */
+
+/* Alternative zu den mediaqueries von oben: */
+
+section  {
+    flex-direction: row;
+    /* flex-direction: Gibt an wie die flex-items angeordnet werden
+            Mögliche Werte:
+            column - werden als Spalte, also untereinander angeordnet
+            row - werden als Zeile, also nebeneinander angeordnet
+            column reverse - werden untereinander in umgekehrter Reihenfolge angezeigt
+            row reverse - werden nebeneinander in umgekehrter Reihenfolge angezeigt */
+    flex-wrap: wrap;
+    /* flex-wrap: Bestimmt ob die Elemente in die nächste Zeile rutschen dürfen */
+    /* Mögliche Werte:
+        wrap - erlaubt das umbrechen
+        nowrap - verbietet das umbrechen 
+     */
+}
+/*  Sollte am besten noch mit einer größe bei den flex-items kombiniert werden */
+
+article {
+    flex: 200px;
+    /* flex: 200px sagt aus, dass jeder Article mindestens 200px breit sein muss */
+    /* Können alternativ dazu auch einen relativen Wert verwenden, also einfach eine Zahl ohne Einheit
+    */
+    /* Erklräung relativ:
+        Wenn jedes Element die selbe Zahl hinter flex hat teilen sie sich gleichmäßig die Breite auf
+        Sobald wir bei einem Element eine größe Zahl hinschreiben nimmt es sich relativ zum Verhältnis der Zahlen mehr Platz
+        article mit flex:1; article mit flex:2; verbraucht der article mit flex:2 doppelt so viel Platz wie der article mit flex:1
+    */
+    /* Damit Abstand ziwschen den einzelnen Items bleibt: */
+    margin: 5px;
+    /* 5px Abstand in jede Richtung */
+}
+
+.alignment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; /* Zentriert die flex-items innerhalb des flex-containers */
+    /* justify-content: BEstimmt die Anordnung der flex-items entlang der x-Achse
+        Gültige Werte:
+        center - Zentriert die flex-items;
+        flex-start - Ordnet sie am Anfang des flex-containers an
+        flex-end - Ordnet sie am Ende des flex-containers an
+        space-between - Verteilt die Elemente so, dass jeweils gleich viel Abstand zwischen den items ist
+        space-around - Verteilt die Element so, dass links und rechts am Rand jeweils gleich viel Platz frei ist
+        space-evenly - Verteilt die Elemente so, dass zum Rand und zu jedem Item der selbe Platz frei ist
+    */
+    /* Um align-items gut sehen zu können muss unsere section höher sein: */
+    height: 250px;
+    /* align-items: Bestimmt die Anordnung der Elemente entlang der y-Achse */
+    /* standardwert: stretch => Elemente werden in die Höhe gezogen um die volle Größe     auszunutzen */
+    align-items: center; /* Zentiert die Elemente entlang der y-Achse */
+    /* Gültige Werte:
+        center - zentriert die Elemente
+        flex-start - Ordnet die Elemente am oberen Ende der flexbox an
+        flex-end - Ordnet die Elemente am unteren Ende der flexbox an
+        stretch - Grundwert, streckt die Elemte über die volle größe
+    */
+}
+
+/* CSS - Einheiten  */
+/*  Bis jetzt haben wir nur mit pixeln gearbeitet */
+/* Gibt aber deutlich mehr Einheiten */
+/* Sind aufteilbar in 2 verschiedene Gruppen  */
+/* 1. Absoluten Einheiten: */
+/* Sind Einheiten, die immer die selbe Größe haben */
+/* 
+    px - 1/96 inch
+    cm - 1 centimeter
+    mm - 1 milimeter
+    in - 1 inch
+    pt - 1/72 inch
+    pc - 1pc ^= 12 pt
+    Passen sich nicht an das Gerät an, können also für viele Geräte zu groß sein
+*/
+
+/* 2. Relative Einheiten */
+/* Passen sich in relation zu einer anderen Größe an */
+/* 
+    % - Prozentwert relativ zum Elternelement
+    em - Relativ zur Schriftgröße des Elements, d.h. 2em ist doppelt so groß wie Schriftgröße
+    rem - Relativ zur Schriftgröße des Rootelements, d.h 3rem sind 3 mal so groß wie die Schriftgröße des root Elements (:root oder html) (häufigste relative Größe)
+    vw - Relativ zur Breite des viewports, d.h. 1vw => 1% der Breite des Browserfensters
+    vh - Relativ zu Höhe des viewports, d.h. 1vh => 1% der Höhe des Browserfensters
+    vmin - Relativ zur kleineren Seite des viewports, geht bei IE nicht
+    vmax - Relativ zur größeren Seite des viewports, geht bei IE nicht
+*/
+/* Tendenz zur Nutzung von relativen Einheiten, da diese sich besser an das Display     anpassen lassen als bei fixen Einheiten */
+/* Sind inzwischen bei allen größeren Browsern angekommen und sollten keine Probleme bei der Verwendung machen
+*/
+
+/* Animationen: */
+/* Werden mit s.g. Keyframes definiert */
+/* Syntax: */
+/* 
+So werden sie definiert:
+@keyframes animationsName {
+from {Zustand:Anfang}
+to {Zustand:Ende}
+}
+@keyframes animationsName {
+0% {Zustand:Anfang}
+25% {Zustand:Viertel}
+50% {Zustand:Mitte}
+...
+100% {Zustand:Ende}
+}
+Benutzung:
+selektor {
+animation-name: animationsName;
+animation-duration: dauerInSekunden; Dauer vom Anfang bis zum Ende der Animation
+animation-duration muss gesetzt werden, da der STandardwert 0sekunden ist und dann keine Animation durchgeführt wird
+}
+*/
+/* Animation: */
+@keyframes rainbowBall {
+    0% {background-color: red;}
+    25% {background-color: yellow;}
+    50% {background-color: green;}
+    100% {background-color: blue;}
+}
+
+.ball {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    /* Müssen nun sagen welche animation abgespielt werden soll */
+    animation-name: rainbowBall;
+    /* Müssen nun auch sagen wie lange die Animation dauern soll, damit sie angezeigt wird */
+    animation-duration: 5s;
+    /* Können auch sage, dass sie sich wiederholen soll: */
+    /* Können hier eine Zahl angeben, die sagt wie oft die Animation durchlaufen werden soll oder infinite für unendliche Wiederholung */
+    animation-iteration-count: 1;
+    /* Können auch eine verzögerung Einbauen: */
+    animation-delay: 2s;
+    /* Wartet nun jeweils 2sekunden bevor die Animation durchlaufen wird */
+    /* animation-fill-mode: 
+        Gibt an welchen Zustand das animierte Element nach Ende der Animation haben soll
+    */
+    animation-fill-mode: backwards;
+    /* Gültige Werte:
+        forwards - Element stylt sich wie die letzte keyframe festlegt
+        backwards - Element stylt sich wie in der ersten keyframe festgelegt
+        none - Keine der Keyframe Regeln gilt nach Ende der Animation
+    */
+    /* animation-timing-function: */
+    /* Bestimmt die Geschwindigkeitskurve des Animationsablaufes */
+    /* Standard: animation-timing-function: linear */
+    /* Geschwindigkeit bleibt gleich und jede Keyframe sollte gleich lange andauern */
+    /* Mögliche Werte:
+        linear - gleichbleibende GEschwindigkeit
+        ease - startet langsam, wird in der Mitte schneller und endet wieder langsamer
+        ease-in - startet langsam und wird dann schneller
+        ease-out - startet schnell und wird langsamer
+        cubic-bezier(n1,n2,n3,n4) nummern müssen jeweils zwischen 0 und 1 sein
+        Die Funktion kann komfortable im Browser angepasst werden und dann in den Code übernommen werden
+    */
+    animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+}
