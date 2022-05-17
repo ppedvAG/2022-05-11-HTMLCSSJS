@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 12 - Advanced HTML und CSS</title>
+    <link href="/static/style/advanced.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Emmet -->
+    <!-- Emmet Schreibweise ist eine Kurzform um schnell HTML schreiben zu können -->
+    <!-- Verwendung:
+        
+        tagname + tab => Erstellt öffnenden und (falls nötig) schließenden Tag und alle benötigten Attribute
+    -->
+    <!-- a:blank => <a href="http://" target="_blank" rel="noopener noreferrer"></a> -->
+    <!-- 
+        tagName.myClass => <tagName class="myClass"></tagName>
+        tagName#myId => <tagName id="myId"></tagName>
+    -->
+    <div class="container">
+
+    </div>
+    <h2 id="heading"></h2>
+    <!-- Kann auch mehrfach das selbe Element erzeugen
+        p*3 => <p></p><p></p><p></p>
+    -->
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <!-- 
+        > - Child
+        () - Grouping
+        ^ - Climb-up, steigt eine Stufe höher
+        table>thead>(tr>th*3)^tbody>(tr>td*3)*4
+        Erstellt eine Tabelle mit einer Kopfzeile mit drei Spalten, sowie einem Körper mit drei Spalten und 4 zeilen
+        Wird schnell verwirrend, dehsalb die Empfehlung in Teilschritten zu arbeiten
+    -->
+    <!-- ! Emmet-cheatsheet: https://docs.emmet.io/cheat-sheet/ -->
+    <!-- Manchmal auch unter dem Namen: Zen-coding -->
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Neue Semantische HTML-Tags -->
+    <!-- Was ist Semantic HTML -->
+    <!-- Sprechendes HTML, das heißt ich sollte schon am Namen des Tags erkennen um welche Art von Inhalt es sich handelt -->
+    <!-- Inzwischen geht man mehr und mehr von divs weg und mehr richtung sections -->
+    <section>
+        <!-- Innerhalb einer section sollten dann articles stehen -->
+        <article>
+            <!-- EIn Article ist ein Text, der für sich alleine stehen kann -->
+            <!-- Z.B. ein Kommentar, oder ein Blogpost -->
+            <h3>Überschrift Artikel 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse beatae fugit nisi consectetur soluta architecto tempore accusantium autem. Cumque repellat ad, possimus ex veritatis laborum magnam deserunt cupiditate labore ullam.</p>
+            <!-- aside ist für weiterführende Infos -->
+            <aside>
+                Ich bin für kleine Nebeninformationen gedacht
+            </aside>
+            <footer>
+                Ich bin für abschließende Informationen gedacht
+            </footer>
+        </article>
+    </section>
+    <!-- der nav-Tag -->
+    <nav>
+        <!-- Wirklich nur als navigationsleiste gedacht -->
+        <!-- Sollte nur ul/ol's sowie li's und a's enthalten -->
+        <!-- Keinerlei gesonderte Darstellung -->
+        <!-- Nur dafür gedacht, dass ich auf den ersten Blick erkenne wofür mein Tag geschrieben wurde und was er enthält -->
+        <ul>
+            <li>
+                <a href="/modul11.html">Modul 11</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

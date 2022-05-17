@@ -1,0 +1,39 @@
+/* 
+    Variablen in css:
+    sollten im root-Element definiert werden
+*/
+
+:root {
+    /* Definieren von variablen */
+    --myVar1: red;
+    --myVar2: 25px;
+}
+
+
+/* Mediaquery */
+/* Mediaqueries definieren: */
+/* Reihenfolge ist wichtig, da die regel gilt, die als letztes definiert wurde und anwendbar ist */
+/* Im Falle von min-width wollen wir immer von der kleinsten zur größten Größe definieren */
+/* Im Falle von max-width wollen wir von der kleinsten zur größten Größe definieren */
+@media screen and (min-width: 250px) {
+    :root {
+        --myVar1: yellow;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    :root {
+        --myVar1: magenta;
+    }
+}
+
+@media print {
+    :root {
+        --myVar1: white;
+    }
+}
+
+article {
+    /* Benutzen von variablen */
+    background-color: var(--myVar1);
+}
