@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatoren</title>
+    <script src="/static/scripts/module13.js" defer></script>
+</head>
+<body>
+    <h1>Generators</h1>
+    <p>Sind grundsätzlich nur spezielle Funktionen, die wir in JavaScript definieren können.</p>
+    <p>Im Gegensatz zu Funktionen haben wir die möglichkeit vom selben Aufruf meherere Werte zurückzugeben</p>
+    <p>Gibt nämlich keinen direkten Wert zurück sondern ein Generator-Objekt</p>
+    <p>Das Generator Objekt verfügt über 2 Eigenschaften und eine Methode:</p>
+    <ul>
+        <li>Eigenschaften:</li>
+        <ul>
+            <li>value, der derzeitige Wert</li>
+            <li>done, boolean der uns Auskunft darüber gibt, ob der Generator komplett durchgelaufen ist oder nicht</li>
+        </ul>
+        <li>Methode:</li>
+        <ul>
+            <li>next(), erlaubt es uns zum nächsten Schritt zu gehen</li>
+        </ul>
+    </ul>
+    <p>Mögliche Einsatzzwecke:</p>
+    <ul>
+        <li>ID-Generator, gibt uns nach initialisierung pro Aufuruf eine neue ID zurück</li>
+        <li>State-Machine, kann uns AUskunft über den derzeitigen Zustand von Navigation oder Usern geben (z.B. in React)
+        </li>
+    </ul>
+</body>
+</html>
