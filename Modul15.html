@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filereader & WebWorker</title>
+    <script src="/static/scripts/module15.js" defer></script>
+</head>
+<body>
+    <h2>Filereader</h2>
+    <input type="file" id="fileupload">
+    <div id="output">
+    </div>
+    <h2>WebWorker:</h2>
+    <label for="amount">Anzahl an Primzahlen:</label>
+    <input type="text" id="amount" value="100000">
+    <button id="generate">Erstellen</button>
+    <div id="outputWorker"></div>
+    <textarea rows="10" cols="50"></textarea>
+    <p>Webworker lohnen sich sehr für rechenintensive Aufgaben, da sie einen eigenen Kern nutzen und die Seite dabei nicht blockieren.</p>
+</body>
+</html>

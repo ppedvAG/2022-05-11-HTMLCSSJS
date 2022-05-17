@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async in JavaScript</title>
+    <script src="/static/scripts/module14.js" defer></script>
+</head>
+<body>
+    <h1>Asynchrones Programmieren</h1>
+    <p>Asynchrones programmieren bedeute grundsätzlich nur, dass der Code nicht sofort das Ergebnis zurückliefert.</p>
+    <p>Die Eventlistener sind eine Art des asynchronen programmierens, da sie nicht sofort das Ergebnis lieferten, sondern erst wenn das Event eintrat.</p>
+    <h2>Wofür brauchen wir das asynchrone Programmieren?</h2>
+    <p>Wenn eine Aktion länger dauert brauchen wir das asynchrone programmieren, damit die Seite nicht unresponsive wird.</p>
+    <h2>Beispiel zum blocking</h2>
+    <p>Wenn Code lange dauert und dabei die Seite nicht antwortet sprechen wir von blocking.</p>
+    <label for="amount">Anzahl an Primzahlen:</label>
+    <input type="text" id="amount" value="100000">
+    <button id="generate">Erstellen</button>
+    <div id="output"></div>
+    <textarea rows="10" cols="50"></textarea>
+    <p>Wie wir oben sehen können dauert die ausführung des Codes sehr lange und blockiert dabei die restliche Seite</p>
+    <p>Das liegt daran, dass JavaScript single-threaded ist, wir also nur auf einem Kern arbeiten können und somit warten müssen bis der Code fertig ist</p>
+    <p>Hier kommt asynchrones JS ins Spiel</p>
+    <p>Ziel ist es langwierigen Code auszuführen und dabei die Seite nicht zu blockieren</p>
+    <p>Das wird mittels Promises erreicht.</p>
+    <p>Und mittels timeouts</p>
+    <h2>timeouts</h2>
+    <p>Timeouts werden nicht parallel ausgeführt, sondern einfach nach hinten geschoben</p>
+    <h2>Promises</h2>
+    <p>Sind wörtlich zu übersetzten, sie sind ein Versprechen, dass etwas passieren wird. Wir versprechen nicht, dass etwas ohne Fehler ausgeführt wir, aber dass trotzdem zu 100% etwas passieren wird.</p>
+    <p>Wir unterscheiden zwischen:</p>
+    <dl>
+        <dt>Producing Code</dt>
+        <dd>Code der etwas ausführt und Daten zurückgibt und dabei längere Zeit braucht.
+            z.B. eine API, die die 100 beliebtesten Filme von einem Server erfragt.
+            Wie eine Band, die lieder produziert.
+        </dd>
+        <dt>Consuming Code</dt>
+        <dd>Code der die fertigen Daten des producing Codes benutzt und weiterverarbeitet.
+            z.B. eine FUnktion, die die Liste der 100 beliebtesten Filme auf einer Website darstellt.
+            Wie die Fans der Band, die sich das Album kaufen und anhören.
+        </dd>
+        <dt>Promise</dt>
+        <dd>Bindeglied zwischen producing und consuming Code. Es informiert den consuming Code darüber, wenn der Producing code fertig ist oder fehlschlug.
+            z.B. die feritge Liste der Filme oder die Fehlermeldung, warum der Server nicht antworten konnte.
+            Wie eine subscription List, die die Fans darüber informiert ob das neue Album released wurde oder verschoben werden musste.
+        </dd>
+    </dl>
+    <h2>Promise - Indepth</h2>
+    <code>let promise = new Promise(function(resolve, reject))</code>
+    <p>Das Promise führt immer eine Funktion aus und verfügt über die beiden Parameter resolve und reject</p>
+    <dl>
+        <dt>resolve(übergebenenWert)</dt>
+        <dd>An sich ein callback auf eine vordefinierte Funktion, die den Wert des Promises auf den übergebenen Wert setzt</dd>
+        <dt>reject(errorMessage)</dt>
+        <dd>Ein Callback, der den Wert des Promises auf die Fehlermeldung setzt</dd>
+    </dl>
+    <p>Diese beiden Funktionen bestimmen den State, also den Zustand, des Promises</p>
+    <h2>Promise-States:</h2>
+    <dl>
+        <dt>pending</dt>
+        <dd>Der Code wird noch ausgeführt und das Promise ist bis jetzt weder erfolgreich noch fehlgeschlagen</dd>
+        <dt>fulfilled</dt>
+        <dd>Wenn das Promise erfolgreich durchlief und einen Wert zurückbekommen hat</dd>
+        <dt>rejected</dt>
+        <dd>Wenn das Promise scheiterte und einen Fehler zurückbekommen hat</dd>
+    </dl>
+    <h2>Promise-Werte:</h2>
+    <p>Der Wert wird immer in der Eigenschaft result gespeichert</p>
+    <p>der Wert von result ändert sich je nach state</p>
+    <dl>
+        <dt>state: pending</dt>
+        <dd>result : undefined</dd>
+        <dd>Kann kein resultat geben bevor der Code ausgeführt wurde</dd>
+        <dt>state: fulfilled</dt>
+        <dd>result: {Wert der Resolve übergeben wurde}</dd>
+        <dd>Enthält die tatsächlich angeforderten Daten</dd>
+        <dt>state: rejcted</dt>
+        <dd>result: {Fehlermeldung, die reject übergeben wurde}</dd>
+        <dd>Sollte klar ausdrücken, warum das Promise fehlschlug</dd>
+    </dl>
+    <output id="fulfilled"></output>
+    <output id="rejected"></output>
+    <table>
+        <thead>
+            <tr>
+                <th>userId</th>
+                <th>id</th>
+                <th>title</th>
+                <th>completed</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button id="fetchTodo">Todos laden</button>
+    <form>
+        <input type="number" min="1" max="10" step="1" id="userId" placeholder="UserId">
+        <input type="text" id="title" placeholder="Title...">
+        <input type="text" id="body" placeholder="Body...">
+        <button type="submit" id="postButton">Send Post</button>
+    </form>
+</body>
+</html>
